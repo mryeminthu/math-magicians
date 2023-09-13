@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import './Calculator.css';
 import Button from './Button';
+import calculate from '../logic/calculate';
 
 const Calculator = () => {
   const [display, setDisplay] = useState('0');
+  const [calculatorData, setCalculatorData] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
 
   const handleButtonClick = (value) => {
-    setDisplay(value);
+    const newData = calculate(calculatorData, value);
+    setCalculatorData(newData);
+    setDisplay(newData.next || newData.total || '0');
   };
 
   const buttons = [
