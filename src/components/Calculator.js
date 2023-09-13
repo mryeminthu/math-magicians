@@ -1,4 +1,5 @@
 import React from 'react';
+import './Calculator.css';
 
 const Calculator = () => {
   const getButtonStyle = (value) => {
@@ -10,7 +11,7 @@ const Calculator = () => {
       '=': 'operator',
       '÷': 'operator',
     };
-    return `${buttonStyles[value]} button`;
+    return `button ${buttonStyles[value]}`;
   };
 
   return (
