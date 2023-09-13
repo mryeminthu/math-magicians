@@ -58,3 +58,7 @@
 .zero {
   grid-column: span 2;
 }
+
+.operator-bg {
+  background-color: orange;
+}
