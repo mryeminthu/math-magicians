@@ -2,57 +2,19 @@ import React, { useState } from 'react';
 import './Calculator.css';
 import Button from './Button';
 import calculate from '../logic/calculate';
-import operate from '../logic/operate';
 
 const Calculator = () => {
   const [display, setDisplay] = useState('0');
-  const [prevInput, setPrevInput] = useState(null);
-  const [currentInput, setCurrentInput] = useState(null);
-  const [operation, setOperation] = useState(null);
+  const [calculatorData, setCalculatorData] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
 
   const handleButtonClick = (value) => {
-    if (/\d/.test(value)) {
-      if (!currentInput) {
-        setCurrentInput(value);
-        setDisplay(value);
-      } else {
-        setCurrentInput(currentInput + value);
-        setDisplay(currentInput + value);
-      }
-    } else if (value === '+' || value === '-' || value === 'x' || value === '÷') {
-      if (currentInput) {
-        if (prevInput && operation) {
-          const result = calculate(prevInput, currentInput, operation);
-          setPrevInput(result);
-          setCurrentInput(null);
-          setOperation(value);
-          setDisplay(result);
-        } else {
-          setPrevInput(currentInput);
-          setCurrentInput(null);
-          setOperation(value);
-        }
-      }
-    } else if (value === '=') {
-      if (prevInput && currentInput && operation) {
-        const result = calculate(prevInput, currentInput, operation);
-        setPrevInput(null);
-        setCurrentInput(result);
-        setOperation(null);
-        setDisplay(result);
-      }
-    } else if (value === 'AC') {
-      setPrevInput(null);
-      setCurrentInput(null);
-      setOperation(null);
-      setDisplay('0');
-    } else if (value === '+/-' || value === '%') {
-      if (currentInput) {
-        const result = operate(currentInput, value);
-        setCurrentInput(result);
-        setDisplay(result);
-      }
-    }
+    const newData = calculate(calculatorData, value);
+    setCalculatorData(newData);
+    setDisplay(newData.next || newData.total || '0');
   };
 
   const buttons = [
