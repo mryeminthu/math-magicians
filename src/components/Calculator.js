@@ -35,7 +35,7 @@ const Calculator = () => {
               key={buttonValue.label || buttonValue}
               value={buttonValue.label || buttonValue}
               onClick={handleButtonClick}
-              className={buttonValue.className || ''}
+              className={`button ${buttonValue.className || ''}`}
             />
           ))}
         </div>
