@@ -3,5 +3,5 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
-  background: conic-gradient(at top right, lightcyan, lightblue);
+  background: conic-gradient(from -90deg at bottom center, papayawhip, peachpuff);
 }

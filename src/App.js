@@ -1,23 +1,22 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
 import Calculator from './components/Calculator';
 import Quote from './components/Quote';
+import Navigation from './components/Navigation';
 
 function App() {
-  const appContainerStyle = {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  };
-
   return (
-    <div style={appContainerStyle}>
-      <div className="quote">
-        <Quote />
+    <Router>
+      <div>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/calculator" element={<Calculator />} />
+          <Route path="/quote" element={<Quote />} />
+        </Routes>
       </div>
-      <div className="calculator">
-        <Calculator />
-      </div>
-    </div>
+    </Router>
   );
 }
 

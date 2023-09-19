@@ -1,0 +1,33 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background-color: rgba(255, 145, 0, 0.868);
+  border-radius: 5px;
+}
+
+.header {
+  font-weight: bold;
+  font-size: 28px;
+  color: white;
+}
+
+.navigation ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navigation li {
+  margin-right: 20px;
+}
+
+a {
+  font-size: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}

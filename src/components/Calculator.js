@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Calculator.css';
-import Button from './Button';
-import calculate from '../logic/calculate';
+import './Calculator.css'; // Import the CSS file
+import Button from './Button'; // Assuming you have a Button component
+import calculate from '../logic/calculate'; // Assuming you have a calculate function
 
 const Calculator = () => {
   const [display, setDisplay] = useState('0');
@@ -26,18 +26,23 @@ const Calculator = () => {
   ];
 
   return (
-    <div className="container">
-      <div className="wrapper">
-        <div className="screen">{display}</div>
-        <div className="buttonBox">
-          {buttons.map((buttonValue) => (
-            <Button
-              key={buttonValue.label || buttonValue}
-              value={buttonValue.label || buttonValue}
-              onClick={handleButtonClick}
-              className={`button ${buttonValue.className || ''}`}
-            />
-          ))}
+    <div className="calculator">
+      <div className="left-content">
+        <div className="calculator-header">Let&apos;s do some math!</div>
+      </div>
+      <div className="right-content">
+        <div className="wrapper">
+          <div className="screen">{display}</div>
+          <div className="buttonBox">
+            {buttons.map((buttonValue) => (
+              <Button
+                key={buttonValue.label || buttonValue}
+                value={buttonValue.label || buttonValue}
+                onClick={handleButtonClick}
+                className={`button ${buttonValue.className || ''}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

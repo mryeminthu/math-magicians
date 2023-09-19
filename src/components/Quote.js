@@ -25,27 +25,22 @@ const Quote = () => {
 
   if (loading) {
     return (
-      <div className="container">
-        <div className="wrapper">
-          <h2>Loading...</h2>
-        </div>
+      <div className="quote-block">
+        <h2>Loading...</h2>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="container">
-        <div className="wrapper">
-          <h2>Error: An error occurred!</h2>
-        </div>
+      <div className="quote-block">
+        <h2>Error: An error occurred!</h2>
       </div>
     );
   }
 
   return (
-    <div className="quote">
-      <h2>Math Magicians</h2>
+    <div className="quote-block">
       <p>{quote.quote}</p>
       <p className="author">{quote.author}</p>
     </div>
