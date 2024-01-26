@@ -59,7 +59,7 @@
 <!-- LIVE DEMO -->
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://math-magicians-5cth.onrender.com/)
+- [Live Demo Link](https://steady-snickerdoodle-900469.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
