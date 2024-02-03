@@ -31,3 +31,9 @@ a {
   cursor: pointer;
   color: white;
 }
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+  }
+}
