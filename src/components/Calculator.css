@@ -78,3 +78,10 @@
 .operator-bg {
   background-color: orange;
 }
+
+@media screen and (max-width: 768px) {
+  .calculator {
+    display: flex;
+    flex-direction: column;
+  }
+}
