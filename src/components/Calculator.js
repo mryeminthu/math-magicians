@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Calculator.css'; // Import the CSS file
-import Button from './Button'; // Assuming you have a Button component
-import calculate from '../logic/calculate'; // Assuming you have a calculate function
+import './Calculator.css';
+import Button from './Button';
+import calculate from '../logic/calculate';
 
 const Calculator = () => {
   const [display, setDisplay] = useState('0');
